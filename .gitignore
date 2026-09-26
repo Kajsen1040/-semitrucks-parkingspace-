@@ -1,0 +1,26 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Local editor and workspace metadata
+.vscode/
+.idea/
+*.code-workspace
+
+# Local Python and tool state
+.python-version
+*.pyc
+*.pyo
+
+# Logs, databases, exports, and credentials
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.pem
+*.key
+*.p12
+*.crt

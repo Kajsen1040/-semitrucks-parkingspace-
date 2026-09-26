@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lastbilsparkering nära dig</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SVERIGE / PLATSFÖRSLAG</p>
+        <h1>Hitta plats för lastbil</h1>
+      </div>
+      <div class="status" id="status" role="status">Begär position ...</div>
+    </header>
+    <main class="layout">
+      <section class="map-panel" aria-label="Karta">
+        <div id="map" class="map" aria-label="Karta över parkeringsplatser"></div>
+      </section>
+      <aside class="results-panel">
+        <div class="controls">
+          <label for="radius">Sökradie</label>
+          <select id="radius">
+            <option value="5000">5 km</option>
+            <option value="10000" selected>10 km</option>
+            <option value="25000">25 km</option>
+            <option value="50000">50 km</option>
+            <option value="100000">100 km</option>
+            <option value="150000">150 km</option>
+          </select>
+          <button id="locate" type="button">Uppdatera position</button>
+        </div>
+        <div class="notice">
+          Platserna kommer från OpenStreetMap och är kandidater. Kontrollera alltid skyltning, fri höjd,
+          längd, viktbegränsningar och aktuell tillgänglighet på plats.
+        </div>
+        <div id="results" class="results" aria-live="polite"></div>
+      </aside>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
