@@ -27,6 +27,7 @@ def prevent_location_caching(response):
     response.headers["X-Frame-Options"] = "DENY"
     response.headers["Permissions-Policy"] = "geolocation=(self)"
     response.headers["X-Permitted-Cross-Domain-Policies"] = "none"
+    response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; "
         "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; "
